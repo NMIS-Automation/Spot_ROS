@@ -18,13 +18,13 @@ pip3 install bosdyn-client bosdyn-mission bosdyn-api bosdyn-core
 
 Go to the source directory of your ROS workspace and clone this repository with
 ```bash
-git clone git@github.com:heuristicus/spot_ros.git
+git clone https://github.com/NMIS-Automation/Spot_ROS.git
 ```
 
 Then, initialise the submodule for the wrapper we use to interact with the Boston Dynamics SDK
 
 ```bash
-cd spot_ros
+cd Spot_ROS
 git submodule init
 git submodule update
 ```
@@ -37,7 +37,8 @@ pip3 install -e spot_wrapper
 Build the ROS packages 
 
 ```bash
-catkin build spot_driver spot_viz
+cd ../..
+catkin build
 ```
 
 Finally, remember to source your workspace.
@@ -50,9 +51,12 @@ Connect to the robot's wifi network, usually found at SSID `spot-BD-xxxxxxxx`. T
 
 Once connected, verify that you can ping the robot with `ping 192.168.80.3`.
 
-Start a roscore on your machine with `roscore`.
-
 Run the driver with the username and password for the robot, again found in the battery compartment
+for the Spot which is working I have put this information by defualt in the launch file.
+```bash
+roslaunch spot_driver driver.launch
+```
+but if you are using the other Spot you have to put this manually.
 
 ```bash
 roslaunch spot_driver driver.launch username:=user password:=[your-password] hostname:=192.168.80.3
@@ -63,10 +67,17 @@ You can then view and control the robot from the rviz interface by running
 ```bash
 roslaunch spot_viz view_robot.launch
 ```
+
+### Mapping the area
+
+To map the area and localization you can use the rtab_map package. A launch file created for this purpos and you can modify the camera input based on your requirements.
+
+```bash
+roslaunch spot_driver rtab_map.launch
+```
+
+More detaild documentation about rtab_map package can be found [here](http://wiki.ros.org/rtabmap_ros)
+
 ## Documentation
 
 More detailed documentation can be found [here](https://heuristicus.github.io/spot_ros)
-
-# MoveIt simulation of Spot's arm
-
-Can be found [here](https://github.com/estherRay/Spot-Arm).
