@@ -67,9 +67,6 @@ You can then view and control the robot from the rviz interface by running
 ```bash
 roslaunch spot_viz view_robot.launch
 ```
-## Documentation
-
-More detailed documentation can be found [here](https://heuristicus.github.io/spot_ros)
 
 ### Mapping the area
 
@@ -79,4 +76,8 @@ To map the area and localization you can use the rtab_map package. A launch file
 roslaunch spot_driver rtab_map.launch
 ```
 
-More detaild documentation can be found [here](http://wiki.ros.org/rtabmap_ros)
+More detaild documentation about rtab_map package can be found [here](http://wiki.ros.org/rtabmap_ros)
+
+## Documentation
+
+More detailed documentation can be found [here](https://heuristicus.github.io/spot_ros)
