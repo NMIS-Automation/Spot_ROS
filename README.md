@@ -37,7 +37,8 @@ pip3 install -e spot_wrapper
 Build the ROS packages 
 
 ```bash
-catkin build spot_driver spot_viz
+cd ../..
+catkin build
 ```
 
 Finally, remember to source your workspace.
