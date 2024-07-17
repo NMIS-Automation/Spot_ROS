@@ -50,9 +50,12 @@ Connect to the robot's wifi network, usually found at SSID `spot-BD-xxxxxxxx`. T
 
 Once connected, verify that you can ping the robot with `ping 192.168.80.3`.
 
-Start a roscore on your machine with `roscore`.
-
 Run the driver with the username and password for the robot, again found in the battery compartment
+for the Spot which is working I have put this information by defualt in the launch file.
+```bash
+roslaunch spot_driver driver.launch
+```
+but if you are using the other Spot you have to put this manually.
 
 ```bash
 roslaunch spot_driver driver.launch username:=user password:=[your-password] hostname:=192.168.80.3
@@ -67,6 +70,3 @@ roslaunch spot_viz view_robot.launch
 
 More detailed documentation can be found [here](https://heuristicus.github.io/spot_ros)
 
-# MoveIt simulation of Spot's arm
-
-Can be found [here](https://github.com/estherRay/Spot-Arm).
