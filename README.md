@@ -24,7 +24,7 @@ git clone https://github.com/NMIS-Automation/Spot_ROS.git
 Then, initialise the submodule for the wrapper we use to interact with the Boston Dynamics SDK
 
 ```bash
-cd spot_ros
+cd Spot_ROS
 git submodule init
 git submodule update
 ```
