@@ -71,3 +71,12 @@ roslaunch spot_viz view_robot.launch
 
 More detailed documentation can be found [here](https://heuristicus.github.io/spot_ros)
 
+### Mapping the area
+
+To map the area and localization you can use the rtab_map package. A launch file created for this purpos and you can modify the camera input based on your requirements.
+
+```bash
+roslaunch spot_driver rtab_map.launch
+```
+
+More detaild documentation can be found [here](http://wiki.ros.org/rtabmap_ros)
