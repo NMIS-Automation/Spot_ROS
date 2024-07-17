@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+
+<launch>
+  <!-- RTAB-Map Node -->
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <arg name="depth_topic" default="/spot/depth/back/depth_in_visual"/>
+    <arg name="rgb_topic" default="/spot/camera/back/image"/>
+    <arg name="camera_info_topic" default="/spot/camera/back/camera_info"/>
+    <arg name="depth_camera_info_topic" default="/spot/depth/back/camera_info"/>
+    <arg name="frame_id" default="back_fisheye"/>
+    <arg name="queue_size" default="5"/>
+
+
+    <!-- Added args for localization -->
+    <!--arg name="odom_frame_id" default="body"/>
+    <arg name="map_frame_id" default="map"/-->
+  </include>
+
+  <!-- Static Transform Publisher -->
+  <!--node pkg="tf" type="static_transform_publisher" name="body_to_back_fisheye" 
+        args="0.2075 0 0.0805 0 0 0 base_link back_fisheye 100" /-->
+
+  <!-- Ensure odometry node publishes odom to base_link -->
+  <!--node pkg="your_robot_odometry_package" type="your_odometry_node" name="odometry_node" output="screen">
+    <param name="odom_frame_id" value="odom"/>
+    <param name="base_link_frame_id" value="base_link"/>
+  </node-->
+  
+</launch>
